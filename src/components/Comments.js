@@ -6,4 +6,8 @@ function Comments() {
     )
 }
 
+//create a comments form here? When submitted it will add a comment
+//to a list of comments that appear on the page. Maybe add a like feature
+//to comments or ability to comment on a comment.
+
 export default Comments

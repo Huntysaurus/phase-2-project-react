@@ -6,4 +6,6 @@ function Profile() {
     )
 }
 
+//if no profile, then option to create one. If profile, option to update or delete
+
 export default Profile

@@ -26,4 +26,9 @@ function App() {
     )
 }
 
+//   app
+//    |
+//   Home - Header - Profile - comments
+//    |
+//   ProfileCards
 export default App
