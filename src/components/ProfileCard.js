@@ -1,6 +1,6 @@
 import React from "react";
 
-function ProfileCards() {
+function ProfileCard() {
     return (
         <p>profile card</p>
     )
@@ -8,4 +8,4 @@ function ProfileCards() {
 
 //individual profile cards get created in here and displayed inside the Home component
 
-export default ProfileCards
+export default ProfileCard

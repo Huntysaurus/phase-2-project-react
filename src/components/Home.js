@@ -1,13 +1,21 @@
-import React from "react";
+import React, { useEffect, useState } from "react";
+import ProfileCard from "./ProfileCard"
 
 function Home() {
 
-    const 
+    const [profiles, setProfiles] = useState([])
+
+    // useEffect(()=> {
+    //     fetch("http://localhost:3000/profiles")
+    //     .then(r => r.json())
+    //     .then(data => setProfiles(data))
+    // }, [])
+    
     return (
         <>
-           <h1>This Is The Home Page</h1>
+           <h1>Find a New Friend</h1>
             <div>
-
+                <ProfileCard profiles={profiles} />
             </div>
         </>
     )
