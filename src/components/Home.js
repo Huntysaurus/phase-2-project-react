@@ -1,5 +1,6 @@
 import React, { useEffect, useState } from "react";
 import ProfileCard from "./ProfileCard"
+import Search from "./Search";
 
 function Home() {
 
@@ -54,7 +55,8 @@ function Home() {
     
     return (
         <>
-           <h1>Find a New Friend</h1>
+           <h1>Find a New Friend!</h1>
+           <Search/>
             <div>
                 <ProfileCard profiles={profiles} />
             </div>
