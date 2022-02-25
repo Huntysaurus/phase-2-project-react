@@ -1,0 +1,46 @@
+{
+    "profiles": [
+        {
+            "id": 1,
+            "name": "Henry",
+            "photo": "photohere",
+            "description": "I love playing COD Modern Warfare and listening to classical music. Looking for more gamer friends",
+            "interests": "gaming, classical music, biking, dogs, local restaurants"
+        },
+        {
+            "id": 2,
+            "name": "Laura",
+            "photo": "photohere",
+            "description": "I love playing COD Modern Warfare and listening to classical music. Looking for more gamer friends",
+            "interests": "gaming, classical music, biking, dogs, local restaurants"
+        },
+        {
+            "id": 3,
+            "name": "Zeke",
+            "photo": "photohere",
+            "description": "I love playing COD Modern Warfare and listening to classical music. Looking for more gamer friends",
+            "interests": "gaming, classical music, biking, dogs, local restaurants"
+        },
+        {
+            "id": 4,
+            "name": "Steph",
+            "photo": "photohere",
+            "description": "I love playing COD Modern Warfare and listening to classical music. Looking for more gamer friends",
+            "interests": "gaming, classical music, biking, dogs, local restaurants"
+        },
+        {
+            "id": 5,
+            "name": "Anthony",
+            "photo": "photohere",
+            "description": "I love playing COD Modern Warfare and listening to classical music. Looking for more gamer friends",
+            "interests": "gaming, classical music, biking, dogs, local restaurants"
+        },
+        {
+            "id": 6,
+            "name": "H",
+            "photo": "photohere",
+            "description": "I love playing COD Modern Warfare and listening to classical music. Looking for more gamer friends",
+            "interests": "gaming, classical music, biking, dogs, local restaurants"
+        },
+    ]
+}

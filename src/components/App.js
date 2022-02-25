@@ -7,6 +7,8 @@ import Home from "./Home";
 import NavBar from "./NavBar";
 
 function App() {
+
+    
     return (
         <div>
             <Header />
@@ -28,7 +30,7 @@ function App() {
 
 //   app
 //    |
-//   Home - Header - Profile - comments
+//   Home - Header - Profile - comments - NavBar
 //    |
 //   ProfileCards
 export default App
