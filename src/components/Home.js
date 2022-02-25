@@ -1,8 +1,15 @@
 import React from "react";
 
 function Home() {
+
+    const 
     return (
-        <h1>This Is The Home Page</h1>
+        <>
+           <h1>This Is The Home Page</h1>
+            <div>
+
+            </div>
+        </>
     )
 }
 
