@@ -2,7 +2,7 @@ import React from "react";
 
 function Header() {
     return (
-        <h1> This is my App!</h1>
+        <h1>Buddy Match</h1>
     )
 }
 
