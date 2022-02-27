@@ -57,9 +57,6 @@ function Home() {
         <>
            <h1>Find a New Friend!</h1>
            <Search/>
-            <div>
-                <ProfileCard profiles={profiles} />
-            </div>
         </>
     )
 }

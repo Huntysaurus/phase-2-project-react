@@ -1,12 +1,27 @@
-import React, { useState } from "react";
+import React, { useState, useEffect } from "react";
 import ProfileForm from "./ProfileForm";
 function ProfileCard({ profiles }) {
 
-    const [like, setLike] = useState(false)
+
+    const [userProfile, setUserProfile] = useState("")
+
+    useEffect(()=> {
+        fetch("http://localhost:3000")
+        .then(res => res.fson())
+        .then(data => handleUserProfile(data))
+    }, [])
+
+
+        function handleUserProfile(profileObj) {
+            setUserProfile(profileObj)
+            console.log(userProfile)
+        }
 
             return (
+                <div>
+                    <ProfileForm onProfileFormSubmit={handleUserProfile} />
+                </div>
 
-                <p>hello</p>
             // <div key={profile.id}>
             //     <h3>{profile.name}</h3>
             //     <p>{profile.description}</p>

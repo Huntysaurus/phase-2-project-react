@@ -37,7 +37,6 @@ function ProfileForm({ onProfileFormSubmit }) {
     return (
 
         <form onSubmit={handleSubmit}>
-            <div>
                 <h2>Create Your Profile</h2>
                 <label>
                     Name:
@@ -76,7 +75,7 @@ function ProfileForm({ onProfileFormSubmit }) {
                      onChange={handleProfilePictureChange}
                      />
                 </label>
-            </div>
+                <button type="submit">Create</button>
         </form>
     )
 }
