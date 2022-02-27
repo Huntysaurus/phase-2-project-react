@@ -7,7 +7,7 @@ function NavBar() {
             <NavLink to="/">
                 Home
             </NavLink>
-            <NavLink to="/profile">
+            <NavLink to="/profilecard">
                 Profile
             </NavLink>
             <NavLink to="/comments">

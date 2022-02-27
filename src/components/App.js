@@ -2,7 +2,7 @@ import React from "react";
 import { Route, Switch } from "react-router-dom";
 import Header from "./Header";
 import Comments from "./Comments";
-import ProfileForm from "./ProfileForm";
+import ProfileCard from "./ProfileCard";
 import Home from "./Home";
 import NavBar from "./NavBar";
 
@@ -17,8 +17,8 @@ function App() {
                 <Route exact path="/">
                     <Home />
                 </Route>
-                <Route exact path="/profile">
-                    <ProfileForm />
+                <Route exact path="/profilecard">
+                    <ProfileCard />
                 </Route>
                 <Route exact path="/comments">
                     <Comments />
