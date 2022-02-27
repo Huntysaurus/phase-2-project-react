@@ -20,6 +20,7 @@ function ProfileCard() {
 
 
         function handleUserProfile(profileObj) {
+            console.log(profileObj)
             setUserProfile(profileObj)
             console.log(userProfile)
         }
