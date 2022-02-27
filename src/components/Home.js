@@ -4,7 +4,8 @@ import Search from "./Search";
 
 function Home() {
 
-    const [profiles, setProfiles] = useState([{
+    const [like, setLike] = useState(true)
+    const profiles = [{
         "id": 1,
         "name": "Henry",
         "photo": "photohere",
@@ -21,7 +22,7 @@ function Home() {
     {
         "id": 3,
         "name": "Zeke",
-        "photo": "photohere",
+        "photo": "https://shop.stockphotosecrets.com/stock-photo-preview/98162672/ing_32193_136005.jpg",
         "description": "Been spending the last year traveling. I love anything dealing with the great outdoors and hiking!",
         "interests": "hiking, swimming, surfing, soccer"
     },
@@ -45,18 +46,25 @@ function Home() {
         "photo": "photohere",
         "description": "Profesional Interior Decorator. I'm pretty into thre art scene and always looking for good auctions and galleries. Always looking to expand my social network",
         "interests": "classical art, mid-century modern, cats, hiking"
-    }])
-
-    // useEffect(()=> {
-    //     fetch("http://localhost:3000/profiles")
-    //     .then(r => r.json())
-    //     .then(data => setProfiles(data))
-    // }, [])
+    }]
     
     return (
         <>
            <h1>Find a New Friend!</h1>
            <Search/>
+            {profiles.map(profile => {
+                return (
+                        <div key={profile.id}>
+                            <h3>{profile.name}</h3>
+                            <p>{profile.description}</p>
+                            <p>{profile.interests}</p>
+                            <img src={profile.photo} alt={profile.name}></img>
+                            <button onClick={() => setLike(true)}>Like</button>
+                        </div>
+                        )
+                    }
+                )
+            }
         </>
     )
 }

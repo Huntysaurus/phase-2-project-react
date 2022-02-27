@@ -1,13 +1,13 @@
 import React, { useState, useEffect } from "react";
 import ProfileForm from "./ProfileForm";
-function ProfileCard({ profiles }) {
+function ProfileCard() {
 
 
     const [userProfile, setUserProfile] = useState("")
 
     useEffect(()=> {
         fetch("http://localhost:3000")
-        .then(res => res.fson())
+        .then(res => res.json())
         .then(data => handleUserProfile(data))
     }, [])
 
@@ -20,15 +20,13 @@ function ProfileCard({ profiles }) {
             return (
                 <div>
                     <ProfileForm onProfileFormSubmit={handleUserProfile} />
+                    <div key={userProfile.id}>
+                        <h3>{userProfile.name}</h3>
+                        <p>{userProfile.description}</p>
+                        <p>{userProfile.interests}</p>
+                        <img src={userProfile.photo} alt={userProfile.name}></img>
+                    </div>
                 </div>
-
-            // <div key={profile.id}>
-            //     <h3>{profile.name}</h3>
-            //     <p>{profile.description}</p>
-            //     <p>{profile.interests}</p>
-            //     <img src={profile.photo} alt={profile.name}></img>
-            //     <button onClick={() => setLike(true)}>Like</button>
-            // </div>
 
             )
         }
