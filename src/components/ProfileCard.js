@@ -5,14 +5,15 @@ import ProfileForm from "./ProfileForm";
 
 function ProfileCard() {
 
-    const [userProfile, setUserProfile] = useState(null)
+    const [profile, setProfile] = useState(null)
+    const [profileData, setProfileData] = useState([])
 
-    console.log(userProfile)
+    console.log('entire object', profileData)
 
     useEffect(()=> {
         fetch("http://localhost:4000/profileData")
         .then(res => res.json())
-        .then(data => setUserProfile(data))
+        .then(data => setProfileData(data))
     }, [])
 
 
@@ -26,28 +27,29 @@ function ProfileCard() {
             body:JSON.stringify(profileObj)
         })
         .then(res => res.json())
-        .then(data => setUserProfile(data))
+        .then(data => setProfileData(data))
+        setProfile('Profile')
         }
 
-        if (userProfile === []) {
-        return (
-            <ProfileForm onProfileFormSubmit={handleUserProfile} />
-                
-        )
+        if (profile === 'Profile') {
+        // return (
+        //         <div key={profileData[0].id}>
+        //             <h3>{profileData[0].name}</h3>
+        //             <p>{profileData[0].description}</p>
+        //             <p>{profileData[0].interests}</p>
+        //             <img src={profileData[0].photo} alt={profileData[0].name}></img>
+        //             <button>edit profile</button>
+        //             <button>delete profile</button>
+        //         </div>
+
+        // )
         } else {
                 return (
-                    <div key={userProfile[0].id}>
-                    <h3>{userProfile[0].name}</h3>
-                    <p>{userProfile[0].description}</p>
-                    <p>{userProfile[0].interests}</p>
-                    <img src={userProfile[0].photo} alt={userProfile[0].name}></img>
-                    <button>edit profile</button>
-                    <button>delete profile</button>
-                </div>
+                <ProfileForm onProfileFormSubmit={handleUserProfile} />
             )
         }
     }
 
-//profile card or form depending on if created or not
+//individual profile cards get created in here and displayed inside the Home component
 
 export default ProfileCard
