@@ -5,10 +5,11 @@ import ProfileForm from "./ProfileForm";
 
 function ProfileCard() {
 
-    const [profile, setProfile] = useState(null)
+    const [profile, setProfile] = useState(false)
     const [profileData, setProfileData] = useState([])
 
     console.log('entire object', profileData)
+    console.log('profile', profile)
 
     useEffect(()=> {
         fetch("http://localhost:4000/profileData")
@@ -18,6 +19,7 @@ function ProfileCard() {
 
 
     function handleUserProfile(profileObj) {
+        setProfile(true)
         console.log(profileObj)
         fetch("http://localhost:4000/profileData", {
             method: 'POST',
@@ -28,21 +30,20 @@ function ProfileCard() {
         })
         .then(res => res.json())
         .then(data => setProfileData(data))
-        setProfile('Profile')
         }
 
-        if (profile === 'Profile') {
-        // return (
-        //         <div key={profileData[0].id}>
-        //             <h3>{profileData[0].name}</h3>
-        //             <p>{profileData[0].description}</p>
-        //             <p>{profileData[0].interests}</p>
-        //             <img src={profileData[0].photo} alt={profileData[0].name}></img>
-        //             <button>edit profile</button>
-        //             <button>delete profile</button>
-        //         </div>
+        if (profile === true) {
+        return (
+                <div key={profileData[0].id}>
+                    <h3>{profileData[0].name}</h3>
+                    <p>{profileData[0].description}</p>
+                    <p>{profileData[0].interests}</p>
+                    <img src={profileData[0].photo} alt={profileData[0].name}></img>
+                    <button>edit profile</button>
+                    <button>delete profile</button>
+                </div>
 
-        // )
+        )
         } else {
                 return (
                 <ProfileForm onProfileFormSubmit={handleUserProfile} />
