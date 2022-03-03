@@ -1,27 +1,7 @@
 import { v4 as uuid} from "uuid"
 import React, { useState } from "react";
 
-function ProfileForm({ onProfileFormSubmit, user, profiles }) {
-    const [name, setName] = useState("")
-    const [gender, setGender] = useState("male")
-    const [interests, setInterests] = useState("")
-    const [profilePicture, setProfilePicture] = useState("")
-
-    function handleNameChange(e) {
-        setName(e.target.value)
-    }
-
-    function handleGenderChange(e) {
-        setGender(e.target.value)
-    }
-
-    function handleInterestChange(e) {
-        setInterests(e.target.value)
-    }
-
-    function handleProfilePictureChange(e) {
-        setProfilePicture(e.target.value)
-    }
+function ProfileForm({ onProfileFormSubmit, user, profiles, name, gender, interests, profilePicture, onHandleNameChange, onHandleGenderChange, onHandleInterestChange, onHandleProfilePictureChange}) {
 
     function handleSubmit(e) {
         e.preventDefault()
@@ -48,7 +28,7 @@ function ProfileForm({ onProfileFormSubmit, user, profiles }) {
                     <input type='text'
                     placeholder='type your name here'
                     value={name}
-                    onChange={handleNameChange}
+                    onChange={onHandleNameChange}
                     />
                 </label>
                 <label>
@@ -56,7 +36,7 @@ function ProfileForm({ onProfileFormSubmit, user, profiles }) {
                     <select
                     name="Gender"
                     value={gender}
-                    onChange={handleGenderChange}
+                    onChange={onHandleGenderChange}
                     >
                         <option value="male">male</option>
                         <option value="female">female</option>
@@ -69,7 +49,7 @@ function ProfileForm({ onProfileFormSubmit, user, profiles }) {
                     <input type='text'
                     placeholder='tell us about yourself!'
                     value={interests}
-                    onChange={handleInterestChange}
+                    onChange={onHandleInterestChange}
                     />
                 </label>
                 <label>
@@ -77,7 +57,7 @@ function ProfileForm({ onProfileFormSubmit, user, profiles }) {
                     <input type='text'
                      placeholder='add your profile picture!'
                      value={profilePicture}
-                     onChange={handleProfilePictureChange}
+                     onChange={onHandleProfilePictureChange}
                      />
                 </label>
                 <button type="submit">Create</button>

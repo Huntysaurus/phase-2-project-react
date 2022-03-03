@@ -11,6 +11,10 @@ function App() {
 
     const [user, setUser] = useState(false)
     const [profiles, setProfiles] = useState([])
+    const [name, setName] = useState("")
+    const [gender, setGender] = useState("male")
+    const [interests, setInterests] = useState("")
+    const [profilePicture, setProfilePicture] = useState("")
 
     useEffect(()=> {
         fetch("http://localhost:4000/profiles")
@@ -33,6 +37,22 @@ function App() {
             setProfiles([...profiles, data])
             setUser(data)
         })
+        }
+
+        function handleNameChange(e) {
+            setName(e.target.value)
+        }
+    
+        function handleGenderChange(e) {
+            setGender(e.target.value)
+        }
+    
+        function handleInterestChange(e) {
+            setInterests(e.target.value)
+        }
+    
+        function handleProfilePictureChange(e) {
+            setProfilePicture(e.target.value)
         }
     
     return (
@@ -57,7 +77,7 @@ function App() {
                     <Home />
                 </Route>
                 <Route exact path="/signup">
-                    <ProfileForm onProfileFormSubmit={handleUserProfile} profiles={profiles} user={user} />
+                    <ProfileForm onProfileFormSubmit={handleUserProfile} profiles={profiles} user={user} name={name} gender={gender} interests={interests} profilePicture={profilePicture} onHandleGenderChange={handleGenderChange} onHandleNameChange={handleNameChange} onHandleInterestChange={handleInterestChange} onHandleProfilePictureChange={handleProfilePictureChange}  />
                 </Route>          
                 <Route exact path="/login">
                     <Login user={user} profiles={profiles}/>    

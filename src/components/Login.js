@@ -8,7 +8,7 @@ function Login({user, profiles}) {
             </div>
             <form>
             <label>
-                    Name:
+                    Log in with your Name:
                     <input type='text'
                     placeholder='type your name here'
                     />
