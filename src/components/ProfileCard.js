@@ -1,6 +1,6 @@
 import React from "react";
 
-function ProfileCard({ user }) {
+function ProfileCard({ user, onDeleteProfile }) {
     return (
             <div key={user.id}>
                 <h3>{user.name}</h3>
@@ -8,7 +8,7 @@ function ProfileCard({ user }) {
                 <p>{user.interests}</p>
                 <img src={user.profilePicture} alt={user.name}></img>
                 <button>edit profile</button>
-                <button>delete profile</button>
+                <button onClick={()=>onDeleteProfile(user.id)}>delete profile</button>
             </div>
             )    
     }

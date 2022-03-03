@@ -42,6 +42,14 @@ function App() {
         alert("hmm... That name isn't in our records. Make sure to check spelling and casing!")
     }}
 
+    function handleDeleteProfile(id) {
+        fetch(`http://localhost:4000/profiles/${id}`,{
+            method:'DELETE'
+        })
+        .then(res => res.json())
+        .then(user => setUser(false))
+    }
+
     function handleUserProfile(profileObj) {
         console.log(profileObj)
         fetch("http://localhost:4000/profiles", {
@@ -90,7 +98,7 @@ function App() {
                     <Home />
                 </Route>
                 <Route exact path="/profilecard">
-                    <ProfileCard user={user}/>
+                    <ProfileCard user={user} onDeleteProfile={handleDeleteProfile}/>
                 </Route>
                 <Route>
                     <UserProfiles profiles={profiles} />
@@ -114,9 +122,4 @@ function App() {
     )
 }
 
-//   app
-//    |
-//   Home - Header - Profile - comments - NavBar
-//    |
-//   ProfileCards
 export default App
