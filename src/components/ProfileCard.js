@@ -5,14 +5,14 @@ import ProfileForm from "./ProfileForm";
 
 function ProfileCard() {
 
-    const [profile, setProfile] = useState(false)
+    const [profile, setProfile] = useState(true)
     const [profileData, setProfileData] = useState([])
 
     console.log('profile', profile)
     console.log('profileData', profileData[0])
 
     useEffect(()=> {
-        fetch("http://localhost:4000/profileData")
+        fetch("http://localhost:4000/profiles")
         .then(res => res.json())
         .then(data => setProfileData(data))
     }, [])
@@ -20,7 +20,7 @@ function ProfileCard() {
 
     function handleUserProfile(profileObj) {
         console.log(profileObj)
-        fetch("http://localhost:4000/profileData", {
+        fetch("http://localhost:4000/profiles", {
             method: 'POST',
             headers: {
                 'Content-Type':'application/json'

@@ -41,6 +41,13 @@
       "photo": "https://media.gettyimages.com/photos/portrait-of-mature-woman-laughing-picture-id901578768?k=20&m=901578768&s=612x612&w=0&h=ofKBuAwEZ4zZ34OEusJBS6lu8VPCGlDOJzOzDnouxeI=",
       "description": "Profesional Interior Decorator. I'm pretty into thre art scene and always looking for good auctions and galleries. Always looking to expand my social network",
       "interests": "classical art, mid-century modern, cats, hiking"
+    },
+    {
+      "id": "fc3b99e0-1482-4fe3-8ff2-28a91cc9e2d0",
+      "name": "Jake",
+      "gender": "male",
+      "interests": "Yaw",
+      "profilePicture": "sfdesfesf"
     }
   ]
 }

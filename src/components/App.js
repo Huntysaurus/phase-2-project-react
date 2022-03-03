@@ -1,7 +1,6 @@
 import React, { useState, useEffect } from "react";
 import { Route, Switch } from "react-router-dom";
 import Header from "./Header";
-import Comments from "./Comments";
 import ProfileCard from "./ProfileCard";
 import Home from "./Home";
 import NavBar from "./NavBar";
@@ -9,7 +8,7 @@ import ProfileForm from "./ProfileForm";
 
 function App() {
 
-    const [user, setUser] = useState(false)
+    const [user, setUser] = useState(true)
     const [profiles, setProfiles] = useState([])
 
     useEffect(()=> {
@@ -38,7 +37,7 @@ function App() {
     return (
         <div>
             <Header />
-            <NavBar user={user} />
+            <NavBar user={user} onSignOutClick={()=>setUser(false)}/>
             {user ? 
 
             //logged in
@@ -48,9 +47,6 @@ function App() {
                 </Route>
                 <Route exact path="/profilecard">
                     <ProfileCard />
-                </Route>
-                <Route exact path="/comments">
-                    <Comments />
                 </Route>
             </Switch> 
             : 

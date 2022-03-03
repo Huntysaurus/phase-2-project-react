@@ -21,8 +21,7 @@ function Home() {
                             <button onClick={() => setLike(true)}>Like</button>
                         </div>
                         )
-                    }
-                )
+                })
             }
         </>
     )

@@ -1,7 +1,7 @@
 import React from "react";
 import { NavLink } from "react-router-dom";
 
-function NavBar({ user }) {
+function NavBar({ user, onSignOutClick }) {
     return (
         <div>
             <NavLink to="/">
@@ -10,25 +10,21 @@ function NavBar({ user }) {
             { user ? 
             <>
                 <NavLink to="/profilecard">
-                Profile
-            </NavLink>
-            <NavLink to="/comments">
-                Comments
-            </NavLink>
-           
-                <button>
+                    Profile
+                </NavLink>
+                <button onClick={()=>onSignOutClick()}>
                     sign out
                 </button>
-            
-            </> :
-                <>
+            </> 
+            :
+            <>
                 <NavLink to="/signup">
-                Sign Up
-            </NavLink>
-            <NavLink to="/login">
-                Login
-            </NavLink>
-                </>
+                    Sign Up
+                </NavLink>
+                <NavLink to="/login">
+                    Login
+                </NavLink>
+            </>
             }
         </div>
     )
