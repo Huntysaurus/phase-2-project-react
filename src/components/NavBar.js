@@ -12,6 +12,9 @@ function NavBar({ user, onSignOutClick }) {
                 <NavLink to="/profilecard">
                     Profile
                 </NavLink>
+                <NavLink to="/userprofiles">
+                    Users
+                </NavLink>
                 <button onClick={()=>onSignOutClick()}>
                     sign out
                 </button>

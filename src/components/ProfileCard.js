@@ -1,56 +1,16 @@
-import React, { useState, useEffect } from "react";
-import ProfileForm from "./ProfileForm";
+import React from "react";
 
-
-
-function ProfileCard() {
-
-    const [profile, setProfile] = useState(true)
-    const [profileData, setProfileData] = useState([])
-
-    console.log('profile', profile)
-    console.log('profileData', profileData[0])
-
-    useEffect(()=> {
-        fetch("http://localhost:4000/profiles")
-        .then(res => res.json())
-        .then(data => setProfileData(data))
-    }, [])
-
-
-    function handleUserProfile(profileObj) {
-        console.log(profileObj)
-        fetch("http://localhost:4000/profiles", {
-            method: 'POST',
-            headers: {
-                'Content-Type':'application/json'
-            },
-            body:JSON.stringify(profileObj)
-        })
-        .then(res => res.json())
-        .then(data => setProfileData(data))
-        setProfile(true)
-        }
-
-        if (profileData.length > 0) {
-        return (
-                <div key={profileData[0].id}>
-                    <h3>{profileData[0].name}</h3>
-                    <p>{profileData[0].description}</p>
-                    <p>{profileData[0].interests}</p>
-                    <img src={profileData[0].photo} alt={profileData[0].name}></img>
-                    <button>edit profile</button>
-                    <button>delete profile</button>
-                </div>
-
-        )
-        } else {
-                return (
-                <ProfileForm onProfileFormSubmit={handleUserProfile} />
-            )
-        }
+function ProfileCard({ user }) {
+    return (
+            <div key={user.id}>
+                <h3>{user.name}</h3>
+                <p>{user.description}</p>
+                <p>{user.interests}</p>
+                <img src={user.photo} alt={user.name}></img>
+                <button>edit profile</button>
+                <button>delete profile</button>
+            </div>
+            )    
     }
-
-//individual profile cards get created in here and displayed inside the Home component
 
 export default ProfileCard

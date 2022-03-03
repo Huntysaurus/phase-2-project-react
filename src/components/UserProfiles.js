@@ -1,8 +1,17 @@
 import React from "react";
+import PublicProfileCard from "./PublicProfileCard";
 
-function UserProfiles() {
+function UserProfiles({ profiles }) {
     return (
-        <p>user profiles page</p>
+        profiles.map((profile) => {
+            return (
+                <ul key={profile.id}>
+                    <PublicProfileCard
+                    profile={profile}
+                    />
+                </ul>
+            )
+        })
     )
 }
 

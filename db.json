@@ -48,6 +48,13 @@
       "gender": "male",
       "interests": "I like coding",
       "profilePicture": "dfihefihefh"
+    },
+    {
+      "id": "0b813275-4066-4469-9cf2-756180444565",
+      "name": "Ashley",
+      "gender": "non-binary",
+      "interests": "I'm a huge fan of cactus",
+      "profilePicture": "picture"
     }
   ]
 }

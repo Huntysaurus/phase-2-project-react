@@ -30,7 +30,13 @@ function App() {
             return p.name === name
         })
         if (foundProfile) {
+            // const ignoreProfile = profiles.find((p) => {
+            //     return p.name !== foundProfile.name
+            // })
             setUser(foundProfile)
+            // setProfiles(ignoreProfile)
+
+            // can't figure out the logic with setting getting the public profiles to ignore the current user
         } else {
         alert("hmm... That name isn't in our records. Make sure to check spelling and casing!")
     }}
@@ -79,10 +85,10 @@ function App() {
                     <Home />
                 </Route>
                 <Route exact path="/profilecard">
-                    <ProfileCard />
+                    <ProfileCard user={user}/>
                 </Route>
                 <Route>
-                    <UserProfiles />
+                    <UserProfiles profiles={profiles} />
                 </Route>
             </Switch> 
             : 
