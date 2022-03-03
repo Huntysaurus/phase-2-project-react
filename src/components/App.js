@@ -5,10 +5,11 @@ import ProfileCard from "./ProfileCard";
 import Home from "./Home";
 import NavBar from "./NavBar";
 import ProfileForm from "./ProfileForm";
+import Login from "./Login";
 
 function App() {
 
-    const [user, setUser] = useState(true)
+    const [user, setUser] = useState(false)
     const [profiles, setProfiles] = useState([])
 
     useEffect(()=> {
@@ -57,7 +58,10 @@ function App() {
                 </Route>
                 <Route exact path="/signup">
                     <ProfileForm onProfileFormSubmit={handleUserProfile} profiles={profiles} user={user} />
-                </Route>                
+                </Route>          
+                <Route exact path="/login">
+                    <Login />    
+                </Route>      
             </Switch>
             }
         </div>
