@@ -1,5 +1,5 @@
 import { v4 as uuid} from "uuid"
-import React, { useState } from "react";
+import React from "react";
 
 function ProfileForm({ onProfileFormSubmit, user, profiles, name, gender, interests, profilePicture, onHandleNameChange, onHandleGenderChange, onHandleInterestChange, onHandleProfilePictureChange}) {
 

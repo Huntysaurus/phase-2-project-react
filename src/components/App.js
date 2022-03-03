@@ -23,6 +23,11 @@ function App() {
     }, [])
 
 
+    function handleProfileLogin(e) {
+        e.preventDefault()
+        console.log(name)
+    }
+
     function handleUserProfile(profileObj) {
         console.log(profileObj)
         fetch("http://localhost:4000/profiles", {
@@ -80,7 +85,7 @@ function App() {
                     <ProfileForm onProfileFormSubmit={handleUserProfile} profiles={profiles} user={user} name={name} gender={gender} interests={interests} profilePicture={profilePicture} onHandleGenderChange={handleGenderChange} onHandleNameChange={handleNameChange} onHandleInterestChange={handleInterestChange} onHandleProfilePictureChange={handleProfilePictureChange}  />
                 </Route>          
                 <Route exact path="/login">
-                    <Login user={user} profiles={profiles}/>    
+                    <Login name={name} onHandleNameChange={handleNameChange} onLoginSubmit={handleProfileLogin}/>    
                 </Route>      
             </Switch>
             }
