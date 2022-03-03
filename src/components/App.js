@@ -15,6 +15,7 @@ function App() {
     const [name, setName] = useState("")
     const [gender, setGender] = useState("male")
     const [interests, setInterests] = useState("")
+    const [description, setDescription] = useState("")
     const [profilePicture, setProfilePicture] = useState("")
 
     useEffect(()=> {
@@ -72,6 +73,10 @@ function App() {
         function handleProfilePictureChange(e) {
             setProfilePicture(e.target.value)
         }
+
+        function handleDescriptionChange(e) {
+            setDescription(e.target.value)
+        }
     
     return (
         <div>
@@ -98,7 +103,7 @@ function App() {
                     <Home />
                 </Route>
                 <Route exact path="/signup">
-                    <ProfileForm onProfileFormSubmit={handleUserProfile} profiles={profiles} user={user} name={name} gender={gender} interests={interests} profilePicture={profilePicture} onHandleGenderChange={handleGenderChange} onHandleNameChange={handleNameChange} onHandleInterestChange={handleInterestChange} onHandleProfilePictureChange={handleProfilePictureChange}  />
+                    <ProfileForm onProfileFormSubmit={handleUserProfile} profiles={profiles} user={user} name={name} gender={gender} interests={interests} description={description} profilePicture={profilePicture} onHandleDescriptionChange={handleDescriptionChange} onHandleGenderChange={handleGenderChange} onHandleNameChange={handleNameChange} onHandleInterestChange={handleInterestChange} onHandleProfilePictureChange={handleProfilePictureChange}  />
                 </Route>          
                 <Route exact path="/login">
                     <Login name={name} onHandleNameChange={handleNameChange} onLoginSubmit={handleProfileLogin}/>    

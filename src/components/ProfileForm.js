@@ -1,7 +1,7 @@
 import { v4 as uuid} from "uuid"
 import React from "react";
 
-function ProfileForm({ onProfileFormSubmit, user, profiles, name, gender, interests, profilePicture, onHandleNameChange, onHandleGenderChange, onHandleInterestChange, onHandleProfilePictureChange}) {
+function ProfileForm({ onProfileFormSubmit, user, profiles, name, gender, interests, profilePicture, description, onHandleNameChange, onHandleGenderChange, onHandleDescriptionChange, onHandleInterestChange, onHandleProfilePictureChange}) {
 
     function handleSubmit(e) {
         e.preventDefault()
@@ -16,6 +16,7 @@ function ProfileForm({ onProfileFormSubmit, user, profiles, name, gender, intere
             name,
             gender,
             interests,
+            description,
             profilePicture,
         })
     }}
@@ -47,7 +48,15 @@ function ProfileForm({ onProfileFormSubmit, user, profiles, name, gender, intere
                 <label>
                     Interests
                     <input type='text'
-                    placeholder='tell us about yourself!'
+                    placeholder='What brings you here?'
+                    value={description}
+                    onChange={onHandleDescriptionChange}
+                    />
+                </label>
+                <label>
+                    Interests
+                    <input type='text'
+                    placeholder='What are your interests?'
                     value={interests}
                     onChange={onHandleInterestChange}
                     />

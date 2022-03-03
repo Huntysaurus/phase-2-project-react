@@ -16,7 +16,7 @@ function NavBar({ user, onSignOutClick }) {
                     Users
                 </NavLink>
                 <button onClick={()=>onSignOutClick()}>
-                    sign out
+                    Logout
                 </button>
             </> 
             :

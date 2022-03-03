@@ -6,7 +6,7 @@ function ProfileCard({ user }) {
                 <h3>{user.name}</h3>
                 <p>{user.description}</p>
                 <p>{user.interests}</p>
-                <img src={user.photo} alt={user.name}></img>
+                <img src={user.profilePicture} alt={user.name}></img>
                 <button>edit profile</button>
                 <button>delete profile</button>
             </div>
