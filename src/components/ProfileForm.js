@@ -2,7 +2,7 @@ import { getByPlaceholderText } from "@testing-library/react";
 import { v4 as uuid} from "uuid"
 import React, { useState } from "react";
 
-function ProfileForm({ onProfileFormSubmit }) {
+function ProfileForm({ onProfileFormSubmit, user, profiles }) {
     const [name, setName] = useState("")
     const [gender, setGender] = useState("male")
     const [interests, setInterests] = useState("")
@@ -26,6 +26,12 @@ function ProfileForm({ onProfileFormSubmit }) {
 
     function handleSubmit(e) {
         e.preventDefault()
+        const foundProfile = profiles.find((p) => {
+            return p.name === name
+        })
+        if (foundProfile) {
+            alert("profile exists")
+        } else {
         onProfileFormSubmit({
             id: uuid(),
             name,
@@ -33,7 +39,7 @@ function ProfileForm({ onProfileFormSubmit }) {
             interests,
             profilePicture,
         })
-    }
+    }}
     return (
 
         <form onSubmit={handleSubmit}>

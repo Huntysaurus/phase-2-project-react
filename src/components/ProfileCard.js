@@ -8,8 +8,8 @@ function ProfileCard() {
     const [profile, setProfile] = useState(false)
     const [profileData, setProfileData] = useState([])
 
-    console.log('entire object', profileData)
     console.log('profile', profile)
+    console.log('profileData', profileData[0])
 
     useEffect(()=> {
         fetch("http://localhost:4000/profileData")
@@ -19,7 +19,6 @@ function ProfileCard() {
 
 
     function handleUserProfile(profileObj) {
-        setProfile(true)
         console.log(profileObj)
         fetch("http://localhost:4000/profileData", {
             method: 'POST',
@@ -30,9 +29,10 @@ function ProfileCard() {
         })
         .then(res => res.json())
         .then(data => setProfileData(data))
+        setProfile(true)
         }
 
-        if (profile === true) {
+        if (profileData.length > 0) {
         return (
                 <div key={profileData[0].id}>
                     <h3>{profileData[0].name}</h3>

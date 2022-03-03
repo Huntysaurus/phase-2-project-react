@@ -1,18 +1,35 @@
 import React from "react";
 import { NavLink } from "react-router-dom";
 
-function NavBar() {
+function NavBar({ user }) {
     return (
         <div>
             <NavLink to="/">
                 Home
             </NavLink>
-            <NavLink to="/profilecard">
+            { user ? 
+            <>
+                <NavLink to="/profilecard">
                 Profile
             </NavLink>
             <NavLink to="/comments">
                 Comments
             </NavLink>
+           
+                <button>
+                    sign out
+                </button>
+            
+            </> :
+                <>
+                <NavLink to="/signup">
+                Sign Up
+            </NavLink>
+            <NavLink to="/login">
+                Login
+            </NavLink>
+                </>
+            }
         </div>
     )
 }
