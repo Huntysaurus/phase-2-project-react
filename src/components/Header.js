@@ -6,6 +6,4 @@ function Header() {
     )
 }
 
-//add a dark-mode toggle
-
 export default Header;

@@ -1,10 +1,9 @@
-import React, { useEffect, useState } from "react";
-import ProfileCard from "./ProfileCard"
+import React, { useState } from "react";
 import Search from "./Search";
 
 function Home() {
 
-    const [like, setLike] = useState(true)
+    const [like, setLike] = useState(false)
     const profiles = []
     
     return (

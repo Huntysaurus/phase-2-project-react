@@ -6,6 +6,7 @@ import Home from "./Home";
 import NavBar from "./NavBar";
 import ProfileForm from "./ProfileForm";
 import Login from "./Login";
+import UserProfiles from "./UserProfiles"
 
 function App() {
 
@@ -25,8 +26,14 @@ function App() {
 
     function handleProfileLogin(e) {
         e.preventDefault()
-        console.log(name)
-    }
+        const foundProfile = profiles.find((p) => {
+            return p.name === name
+        })
+        if (foundProfile) {
+            setUser(foundProfile)
+        } else {
+        alert("hmm... That name isn't in our records. Make sure to check spelling and casing!")
+    }}
 
     function handleUserProfile(profileObj) {
         console.log(profileObj)
@@ -73,6 +80,9 @@ function App() {
                 </Route>
                 <Route exact path="/profilecard">
                     <ProfileCard />
+                </Route>
+                <Route>
+                    <UserProfiles />
                 </Route>
             </Switch> 
             : 
