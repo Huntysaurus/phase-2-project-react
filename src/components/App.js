@@ -60,7 +60,7 @@ function App() {
                     <ProfileForm onProfileFormSubmit={handleUserProfile} profiles={profiles} user={user} />
                 </Route>          
                 <Route exact path="/login">
-                    <Login />    
+                    <Login user={user} profiles={profiles}/>    
                 </Route>      
             </Switch>
             }
