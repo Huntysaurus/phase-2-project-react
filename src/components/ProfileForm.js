@@ -74,8 +74,4 @@ function ProfileForm({ onProfileFormSubmit, user, profiles, name, gender, intere
     )
 }
 
-
-
-//if no profile, then option to create one. If profile, option to update or delete
-
 export default ProfileForm

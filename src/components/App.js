@@ -7,6 +7,7 @@ import NavBar from "./NavBar";
 import ProfileForm from "./ProfileForm";
 import Login from "./Login";
 import UserProfiles from "./UserProfiles"
+import BuddyList from "./BuddyList";
 
 function App() {
 
@@ -106,6 +107,9 @@ function App() {
                 </Route>
                 <Route>
                     <UserProfiles profiles={profiles} />
+                </Route>
+                <Route exact path="/buddylist">
+                    <BuddyList />
                 </Route>
             </Switch> 
             : 
