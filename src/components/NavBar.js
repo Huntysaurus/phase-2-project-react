@@ -15,9 +15,6 @@ function NavBar({ user, onSignOutClick }) {
                 <NavLink to="/userprofiles">
                     Users
                 </NavLink>
-                <NavLink to="/buddylist">
-                    Buddy List
-                </NavLink>
                 <button onClick={()=>onSignOutClick()}>
                     Logout
                 </button>

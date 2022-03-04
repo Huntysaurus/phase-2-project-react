@@ -1,7 +1,18 @@
 import React from "react";
 
-function ProfileCard({ user, onDeleteProfile }) {
+function ProfileCard({ user, onDeleteProfile, likedProfiles, handleUnlikeProfile }) {
+
+    console.log(likedProfiles)
+
+    function onUnlike(profile) {
+        const updatedProfiles = likedProfiles.filter((lp) => {
+            return lp !== profile
+        })
+        handleUnlikeProfile(updatedProfiles)
+    }
+
     return (
+        <>
             <div key={user.id}>
                 <h3>{user.name}</h3>
                 <p>{user.gender}</p>
@@ -11,7 +22,23 @@ function ProfileCard({ user, onDeleteProfile }) {
                 <button>edit profile</button>
                 <button onClick={()=>onDeleteProfile(user.id)}>delete profile</button>
             </div>
-            )    
+            <>
+            <h2>Buddy List</h2>
+                {likedProfiles.map((profile) => {
+                    return (
+                    <div key={profile.id}>
+                    <h3>{profile.name}</h3>
+                    <p>{profile.description}</p>
+                    <p>Interests:{profile.interests}</p>
+                    <p>Gender:{profile.gender}</p>
+                    <img src={profile.profilePicture} alt={profile.name}></img>
+                    <button onClick={() => onUnlike(profile)}>unlike</button>
+                    </div>
+                    )
+                })}
+            </>
+        </>
+        ) 
     }
 
 export default ProfileCard

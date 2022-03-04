@@ -8,7 +8,7 @@ function PublicProfileCard({ profile, onLike }) {
             <p>Interests:{profile.interests}</p>
             <p>Gender:{profile.gender}</p>
             <img src={profile.profilePicture} alt={profile.name}></img>
-            <button onClick={(e) => onLike(profile.id)}>like</button>
+            <button onClick={(e) => onLike(profile)}>like</button>
         </div>
     )
 }

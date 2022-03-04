@@ -1,13 +1,7 @@
 import React, { useState } from "react";
 import PublicProfileCard from "./PublicProfileCard";
 
-function UserProfiles({ profiles }) {
-
-    const[likedProfiles, setLikedProfiles] = useState([])
-
-    function onLike(profile) {
-        console.log(profile)
-    }
+function UserProfiles({ profiles, onLike }) {
     
     return (
         <>

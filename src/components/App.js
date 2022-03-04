@@ -7,7 +7,6 @@ import NavBar from "./NavBar";
 import ProfileForm from "./ProfileForm";
 import Login from "./Login";
 import UserProfiles from "./UserProfiles"
-import BuddyList from "./BuddyList";
 
 function App() {
 
@@ -18,6 +17,7 @@ function App() {
     const [interests, setInterests] = useState("")
     const [description, setDescription] = useState("")
     const [profilePicture, setProfilePicture] = useState("")
+    const [likedProfiles, setLikedProfiles] = useState([])
 
     useEffect(()=> {
         fetch("http://localhost:4000/profiles")
@@ -66,9 +66,17 @@ function App() {
             setUser(data)
         })
         }
+        
+        function onLike(profile) {
+            if (likedProfiles.includes(profile)) {
+                alert("included")
+            } else {
+                setLikedProfiles([...likedProfiles, profile])
+            }
+        }
 
-        function handleSearchSubmit() {
-            console.log('hello')
+        function handleUnlikeProfile(updatedProfile) {
+            console.log(updatedProfile)
         }
 
         function handleNameChange(e) {
@@ -103,13 +111,10 @@ function App() {
                     <Home />
                 </Route>
                 <Route exact path="/profilecard">
-                    <ProfileCard user={user} onDeleteProfile={handleDeleteProfile}/>
+                    <ProfileCard user={user} onDeleteProfile={handleDeleteProfile} likedProfiles={likedProfiles}/>
                 </Route>
                 <Route>
-                    <UserProfiles profiles={profiles} />
-                </Route>
-                <Route exact path="/buddylist">
-                    <BuddyList />
+                    <UserProfiles profiles={profiles} onLike={onLike} handleUnlikeProfile={handleUnlikeProfile}/>
                 </Route>
             </Switch> 
             : 
