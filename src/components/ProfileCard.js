@@ -1,6 +1,6 @@
 import React from "react";
 
-function ProfileCard({ user, onDeleteProfile, likedProfiles, handleUnlikeProfile }) {
+function ProfileCard({ user, onDeleteProfile, likedProfiles, onUnlikeProfile }) {
 
     console.log(likedProfiles)
 
@@ -8,7 +8,7 @@ function ProfileCard({ user, onDeleteProfile, likedProfiles, handleUnlikeProfile
         const updatedProfiles = likedProfiles.filter((lp) => {
             return lp !== profile
         })
-        handleUnlikeProfile(updatedProfiles)
+        onUnlikeProfile(updatedProfiles)
     }
 
     return (

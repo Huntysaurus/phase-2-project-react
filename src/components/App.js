@@ -76,7 +76,7 @@ function App() {
         }
 
         function handleUnlikeProfile(updatedProfile) {
-            console.log(updatedProfile)
+            setLikedProfiles(updatedProfile)
         }
 
         function handleNameChange(e) {
@@ -111,10 +111,10 @@ function App() {
                     <Home />
                 </Route>
                 <Route exact path="/profilecard">
-                    <ProfileCard user={user} onDeleteProfile={handleDeleteProfile} likedProfiles={likedProfiles}/>
+                    <ProfileCard user={user} onDeleteProfile={handleDeleteProfile} likedProfiles={likedProfiles} onUnlikeProfile={handleUnlikeProfile}/>
                 </Route>
                 <Route>
-                    <UserProfiles profiles={profiles} onLike={onLike} handleUnlikeProfile={handleUnlikeProfile}/>
+                    <UserProfiles profiles={profiles} onLike={onLike} />
                 </Route>
             </Switch> 
             : 
