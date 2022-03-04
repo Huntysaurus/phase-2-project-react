@@ -1,19 +1,18 @@
 import React, { useState } from "react";
 
-function Search({ profiles }) {
+function Search({ onSetSearch, onSearchSubmit }) {
 
     const [search, setsearch] = useState("")
 
     function onSearchChange(e) {
-        console.log(profiles)
         setsearch(e.target.value)
-        console.log(search)
+        onSetSearch(search)
     }
 
     return (
         <div>
         <h3>Looking for common ground?</h3>
-        <form>
+        <form onSubmit={onSearchSubmit}>
             <input
             type="text"
             id="search"

@@ -66,6 +66,18 @@ function App() {
         })
         }
 
+        function handleProfileSearch(search) {
+            console.log(search)
+            const filteredProfiles = profiles.filter(profile => {
+                return profile.interests.toLowerCase().includes(search.toLowerCase())
+            })
+            setProfiles(filteredProfiles)
+        }
+
+        function handleSearchSubmit() {
+            console.log('hello')
+        }
+
         function handleNameChange(e) {
             setName(e.target.value)
         }
@@ -101,7 +113,7 @@ function App() {
                     <ProfileCard user={user} onDeleteProfile={handleDeleteProfile}/>
                 </Route>
                 <Route>
-                    <UserProfiles profiles={profiles} />
+                    <UserProfiles profiles={profiles} onHandleProfileSearch={handleProfileSearch} onSearchSubmit={handleSearchSubmit}/>
                 </Route>
             </Switch> 
             : 

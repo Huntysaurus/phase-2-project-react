@@ -8,8 +8,6 @@ function PublicProfileCard({ profile }) {
             <p>Interests:{profile.interests}</p>
             <p>Gender:{profile.gender}</p>
             <img src={profile.profilePicture} alt={profile.name}></img>
-            <button>edit profile</button>
-            <button>delete profile</button>
         </div>
     )
 }

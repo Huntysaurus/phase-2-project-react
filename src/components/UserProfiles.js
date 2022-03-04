@@ -1,12 +1,12 @@
-import React, { useState } from "react";
+import React from "react";
 import PublicProfileCard from "./PublicProfileCard";
 import Search from "./Search"
 
-function UserProfiles({ profiles }) {
+function UserProfiles({ profiles, onHandleProfileSearch, onSearchSubmit }) {
     
     return (
         <>
-        <Search profiles={profiles}/>
+        <Search profiles={profiles} onSetSearch={onHandleProfileSearch} onSearchSubmit={onSearchSubmit}/>
         {profiles.map((profile) => {
             return (
                 <ul key={profile.id}>
