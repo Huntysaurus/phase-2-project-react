@@ -31,14 +31,12 @@ function App() {
         const foundProfile = profiles.find((p) => {
             return p.name === name
         })
+        const filteredProfiles = profiles.filter((p) => {
+            return p.name !== name
+        })
         if (foundProfile) {
-            // const ignoreProfile = profiles.find((p) => {
-            //     return p.name !== foundProfile.name
-            // })
             setUser(foundProfile)
-            // setProfiles(ignoreProfile)
-
-            // can't figure out the logic with setting getting the public profiles to ignore the current user
+            setProfiles(filteredProfiles)
         } else {
         alert("hmm... That name isn't in our records. Make sure to check spelling and casing!")
     }}
@@ -69,10 +67,15 @@ function App() {
         
         function onLike(profile) {
             if (likedProfiles.includes(profile)) {
-                alert("included")
+                alert("This user is already in your Buddy List!")
             } else {
                 setLikedProfiles([...likedProfiles, profile])
             }
+        }
+
+        function handleSignOut() {
+            setUser(false)
+            setLikedProfiles([])
         }
 
         function handleUnlikeProfile(updatedProfile) {
@@ -102,7 +105,7 @@ function App() {
     return (
         <div>
             <Header />
-            <NavBar user={user} onSignOutClick={()=>setUser(false)}/>
+            <NavBar user={user} onSignOutClick={()=>handleSignOut()}/>
             {user ? 
 
             //logged in

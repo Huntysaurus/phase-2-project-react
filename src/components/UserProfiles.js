@@ -5,6 +5,7 @@ function UserProfiles({ profiles, onLike }) {
     
     return (
         <>
+        <h1>/Explore/</h1>
             <div>
                 {profiles.map((profile) => {
                     return (

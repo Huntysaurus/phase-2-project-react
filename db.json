@@ -28,7 +28,7 @@
       "id": 4,
       "name": "Steph",
       "gender": "female",
-      "profiePicture": "https://media.gettyimages.com/photos/young-woman-working-on-desktop-computer-at-home-picture-id1252473585?k=20&m=1252473585&s=612x612&w=0&h=JiwSFcsuPuzeCH87H54WWCajGDUmESpe_aMij1KxYxA=",
+      "profilePicture": "https://media.gettyimages.com/photos/beautiful-woman-with-arms-crossed-against-white-background-picture-id1314491054?k=20&m=1314491054&s=612x612&w=0&h=aUhrxQZEgWKKKCaDJREusFNcHh2jHnKSDoKkMFTML1o=",
       "description": "I spend all day coding lol. Any other coders here??",
       "interests": "gaming, game development, D&D, cats, techno"
     },
@@ -45,22 +45,16 @@
       "name": "H",
       "gender": "female",
       "profilePicture": "https://media.gettyimages.com/photos/portrait-of-mature-woman-laughing-picture-id901578768?k=20&m=901578768&s=612x612&w=0&h=ofKBuAwEZ4zZ34OEusJBS6lu8VPCGlDOJzOzDnouxeI=",
-      "description": "Profesional Interior Decorator. I'm pretty into thre art scene and always looking for good auctions and galleries. Always looking to expand my social network",
+      "description": "Profesional Interior Decorator. I'm pretty into thre art scene and always looking for good auctions and galleries. Always looking to expand my social network as well",
       "interests": "classical art, mid-century modern, cats, hiking"
     },
     {
-      "id": "b3a3524f-cb6f-47d1-ba4f-79cba1bc8779",
+      "id": "0041865a-75be-40a5-a54a-e6d243711c7e",
       "name": "Jake",
       "gender": "male",
-      "interests": "I like coding",
-      "profilePicture": "https://media.gettyimages.com/photos/man-walking-with-his-dog-picture-id540207106?s=2048x2048"
-    },
-    {
-      "id": "0b813275-4066-4469-9cf2-756180444565",
-      "name": "Ashley",
-      "gender": "non-binary",
-      "interests": "I'm a huge fan of cactus",
-      "profilePicture": "picture"
+      "interests": "coding, houseplants, gaming, working out, hiking",
+      "description": "Pretty new to coding. Feel like I have no idea what I'm doing. Been learning React. Any other devs here?",
+      "profilePicture": "https://media.gettyimages.com/photos/smiling-hispanic-man-against-white-background-picture-id1314489757?k=20&m=1314489757&s=612x612&w=0&h=B676LKnY8vPN5aDXtjPChfz3SW6gxWDNYgexZvbg484="
     }
   ]
 }

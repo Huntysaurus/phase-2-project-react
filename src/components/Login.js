@@ -4,7 +4,8 @@ function Login({name, onHandleNameChange, onLoginSubmit}) {
     return (
         <>
             <div>
-                <p>already have an account? Login!</p>
+                <h1>/Login/</h1>
+                <p>Already have an account?</p>
             </div>
             <form onSubmit={onLoginSubmit}>
             <label>

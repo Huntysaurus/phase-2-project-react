@@ -9,7 +9,7 @@ function ProfileForm({ onProfileFormSubmit, user, profiles, name, gender, intere
             return p.name === name
         })
         if (foundProfile) {
-            alert("profile exists")
+            alert("Sorry, but this name already exists in our database...")
         } else {
         onProfileFormSubmit({
             id: uuid(),
@@ -23,7 +23,8 @@ function ProfileForm({ onProfileFormSubmit, user, profiles, name, gender, intere
     return (
 
         <form onSubmit={handleSubmit}>
-                <h2>Create Your Profile</h2>
+                <h1>/Create Your Profile/</h1>
+                <p>Let everyone know who you are and what you want.</p>
                 <label>
                     Name:
                     <input type='text'
@@ -46,7 +47,7 @@ function ProfileForm({ onProfileFormSubmit, user, profiles, name, gender, intere
                     </select>
                 </label>
                 <label>
-                    Interests
+                    Description:
                     <input type='text'
                     placeholder='What brings you here?'
                     value={description}
@@ -54,7 +55,7 @@ function ProfileForm({ onProfileFormSubmit, user, profiles, name, gender, intere
                     />
                 </label>
                 <label>
-                    Interests
+                    Interests:
                     <input type='text'
                     placeholder='What are your interests?'
                     value={interests}
@@ -62,7 +63,7 @@ function ProfileForm({ onProfileFormSubmit, user, profiles, name, gender, intere
                     />
                 </label>
                 <label>
-                    Profile Picture
+                    Profile Picture:
                     <input type='text'
                      placeholder='add your profile picture!'
                      value={profilePicture}

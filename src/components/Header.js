@@ -2,7 +2,7 @@ import React from "react";
 
 function Header() {
     return (
-        <h1>Find /Me/</h1>
+        <h1>/Buddy/</h1>
     )
 }
 
