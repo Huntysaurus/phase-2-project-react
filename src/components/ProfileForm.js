@@ -23,8 +23,8 @@ function ProfileForm({ onProfileFormSubmit, user, profiles, name, gender, intere
     return (
 
         <form onSubmit={handleSubmit}>
-                <h1>/Create Your Profile/</h1>
-                <p>Let everyone know who you are and what you want.</p>
+                <h1 style={{backgroundColor:"#593F44", color:"white"}}>/Create Your Profile/</h1>
+                <p>Let everyone know who you are and why you're here!.</p>
                 <label>
                     Name:
                     <input type='text'

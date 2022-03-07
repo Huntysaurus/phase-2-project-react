@@ -2,7 +2,7 @@ import React from "react";
 
 function Header() {
     return (
-        <h1>/Buddy/</h1>
+        <h1 style={{paddingBottom:"1%", backgroundColor:"#021140", color:"white"}}>/Buddy/</h1>
     )
 }
 

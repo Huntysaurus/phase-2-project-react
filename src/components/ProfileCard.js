@@ -1,8 +1,7 @@
 import React from "react";
+import { Card, Button } from "react-bootstrap";
 
 function ProfileCard({ user, onDeleteProfile, likedProfiles, onUnlikeProfile }) {
-
-    console.log(likedProfiles)
 
     function onUnlike(profile) {
         const updatedProfiles = likedProfiles.filter((lp) => {
@@ -12,33 +11,30 @@ function ProfileCard({ user, onDeleteProfile, likedProfiles, onUnlikeProfile }) 
     }
 
     return (
-        <>
-            <h1>/Your Profile/</h1>
-            <div key={user.id}>
+        <div style={{backgroundColor:"#ADC5D9"}}>
+            <h1 style={{backgroundColor:"#593F44", color:"white"}}>/Your Profile/</h1>
+            <Card style={{width:"60rem", marginLeft:"auto", marginRight:"auto", marginBottom:"2%"}} key={user.id}>
                 <h3>{user.name}</h3>
                 <img src={user.profilePicture} alt={user.name}></img>
-                <p>{user.gender}</p>
-                <p>{user.description}</p>
-                <p>/Interests/ {user.interests}</p>
-                <button>edit profile</button>
-                <button onClick={()=>onDeleteProfile(user.id)}>delete profile</button>
-            </div>
-            <>
-            <h2>/Buddy List/</h2>
+                <p style={{backgroundColor:"#593F44", color:"white"}}>Gender: {user.gender}</p>
+                <p style={{backgroundColor:"#ADC5D9", color:"#593F44"}}>{user.description}</p>
+                <p style={{backgroundColor:"#010A26", color:"#DCE6F2"}}>Interests: {user.interests}</p>
+                <Button style={{width: "10rem"}} onClick={()=>onDeleteProfile(user.id)}>delete profile</Button>
+            </Card>
+            <h1 style={{backgroundColor:"#593F44", color:"white"}}>/Buddy List/</h1>
                 {likedProfiles.map((profile) => {
                     return (
-                    <div key={profile.id}>
-                    <h3>{profile.name}</h3>
-                    <img src={profile.profilePicture} alt={profile.name}></img>
-                    <p>{profile.description}</p>
-                    <p>Interests:{profile.interests}</p>
-                    <p>Gender:{profile.gender}</p>
-                    <button onClick={() => onUnlike(profile)}>unlike</button>
-                    </div>
+                    <Card style={{width:"40rem", marginLeft:"auto", marginRight:"auto", marginBottom:"2%", marginTop:"2%"}} key={profile.id}>
+                        <h3>{profile.name}</h3>
+                        <img src={profile.profilePicture} alt={profile.name}></img>
+                        <p style={{backgroundColor:"#593F44", color:"white"}}>Gender: {profile.gender}</p>
+                        <p style={{backgroundColor:"#ADC5D9", color:"#593F44"}}>{profile.description}</p>
+                        <p style={{backgroundColor:"#010A26", color:"#DCE6F2"}}>Interests: {profile.interests}</p>
+                        <Button style={{width: "10rem"}} onClick={() => onUnlike(profile)}>unlike</Button>
+                    </Card>
                     )
                 })}
-            </>
-        </>
+        </div>
         ) 
     }
 

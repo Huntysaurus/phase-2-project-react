@@ -4,7 +4,7 @@ function Login({name, onHandleNameChange, onLoginSubmit}) {
     return (
         <>
             <div>
-                <h1>/Login/</h1>
+                <h1 style={{backgroundColor:"#593F44", color:"white"}}>/Login/</h1>
                 <p>Already have an account?</p>
             </div>
             <form onSubmit={onLoginSubmit}>

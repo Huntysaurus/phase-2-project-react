@@ -6,7 +6,8 @@ import Home from "./Home";
 import NavBar from "./NavBar";
 import ProfileForm from "./ProfileForm";
 import Login from "./Login";
-import UserProfiles from "./UserProfiles"
+import UserProfiles from "./UserProfiles";
+import 'bootstrap/dist/css/bootstrap.min.css'
 
 function App() {
 

@@ -1,12 +1,11 @@
-import React, { useState } from "react";
 import PublicProfileCard from "./PublicProfileCard";
 
 function UserProfiles({ profiles, onLike }) {
     
     return (
         <>
-        <h1>/Explore/</h1>
-            <div>
+        <h1 style={{backgroundColor:"#593F44", color:"white"}}>/Explore/</h1>
+            <div style={{backgroundColor:"#021140"}}>
                 {profiles.map((profile) => {
                     return (
                         <ul key={profile.id}>
