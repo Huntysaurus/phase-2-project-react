@@ -77,6 +77,9 @@ function App() {
         function handleSignOut() {
             setUser(false)
             setLikedProfiles([])
+            fetch("http://localhost:4000/profiles")
+                .then(res => res.json())
+                .then(data => setProfiles(data))
         }
 
         function handleUnlikeProfile(updatedProfile) {
