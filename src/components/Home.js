@@ -2,7 +2,7 @@ import React from "react";
 
 function Home() {
 
-    const background = {backgroundImage:"url('https://media.gettyimages.com/photos/group-of-friends-making-way-to-a-bar-picture-id1124489891?s=2048x2048')", backgroundSize: 'cover', position:"relative", bottom:0, color:"#010A26"}
+    const background = {backgroundImage:"url('https://media.gettyimages.com/photos/group-of-friends-making-way-to-a-bar-picture-id1124489891?s=2048x2048')", backgroundSize: 'cover', position:"relative",padding:"2%", color:"#010A26"}
     
     return (
         <div style={background}>
