@@ -1,4 +1,4 @@
-#/Buddy/
+# /Buddy/
 
 An app created with Node.js, React and React-Bootstrap
 
