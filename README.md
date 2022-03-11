@@ -1,6 +1,6 @@
 #/Buddy/
 
-An basic app created with Node.js, React and React-Bootstrap
+An app created with Node.js, React and React-Bootstrap
 
 ## The idea behind /Buddy/
 
