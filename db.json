@@ -49,12 +49,12 @@
       "interests": "classical art, mid-century modern, cats, hiking"
     },
     {
-      "id": "0041865a-75be-40a5-a54a-e6d243711c7e",
-      "name": "Jake",
-      "gender": "male",
-      "interests": "coding, houseplants, gaming, working out, hiking",
-      "description": "Pretty new to coding. Feel like I have no idea what I'm doing. Been learning React. Any other devs here?",
-      "profilePicture": "https://media.gettyimages.com/photos/smiling-hispanic-man-against-white-background-picture-id1314489757?k=20&m=1314489757&s=612x612&w=0&h=B676LKnY8vPN5aDXtjPChfz3SW6gxWDNYgexZvbg484="
+      "id": "51583995-71e6-4e11-9021-2181792cc233",
+      "name": "Sarah",
+      "gender": "female",
+      "interests": "nature",
+      "description": "I like hiking",
+      "profilePicture": "https://media.gettyimages.com/photos/confident-hispanic-woman-against-gray-background-picture-id1314489694?k=20&m=1314489694&s=612x612&w=0&h=q3g6BMVHFtJU7_HeNyAvIIJrtbjiwDsD9pBIHE_j1K4="
     }
   ]
 }

@@ -1,5 +1,5 @@
 import React, { useState, useEffect } from "react";
-import { Route, Switch } from "react-router-dom";
+import { Route, Switch, useHistory } from "react-router-dom";
 import Header from "./Header";
 import ProfileCard from "./ProfileCard";
 import Home from "./Home";
@@ -10,6 +10,7 @@ import UserProfiles from "./UserProfiles";
 import 'bootstrap/dist/css/bootstrap.min.css'
 
 function App() {
+    const history = useHistory()
 
     const [user, setUser] = useState(false)
     const [profiles, setProfiles] = useState([])
@@ -40,6 +41,7 @@ function App() {
             setProfiles(filteredProfiles)
         } else {
         alert("hmm... That name isn't in our records. Make sure to check spelling and casing!")
+        history.push("/signup")
     }}
 
     function handleDeleteProfile(id) {
@@ -48,6 +50,7 @@ function App() {
         })
         .then(res => res.json())
         .then(user => setUser(false))
+        history.push("/")
     }
 
     function handleUserProfile(profileObj) {
@@ -63,6 +66,7 @@ function App() {
         .then(data => {
             setProfiles([...profiles, data])
             setUser(data)
+            history.push("/profilecard")
         })
         }
         
@@ -80,6 +84,7 @@ function App() {
             fetch("http://localhost:4000/profiles")
                 .then(res => res.json())
                 .then(data => setProfiles(data))
+                history.push('/')
         }
 
         function handleUnlikeProfile(updatedProfile) {
