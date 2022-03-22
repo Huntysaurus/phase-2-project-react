@@ -39,6 +39,7 @@ function App() {
         if (foundProfile) {
             setUser(foundProfile)
             setProfiles(filteredProfiles)
+            history.push("/profilecard")
         } else {
         alert("hmm... That name isn't in our records. Make sure to check spelling and casing!")
         history.push("/signup")
